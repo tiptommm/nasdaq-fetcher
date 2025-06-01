@@ -1,0 +1,8 @@
+services:
+  - type: cron
+    name: nasdaq-tick-fetcher
+    schedule: "@hourly"
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python nasdaq_data_fetcher.py"
